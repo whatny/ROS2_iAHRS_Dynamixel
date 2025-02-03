@@ -46,67 +46,17 @@ include_directories(
 )
 
 # Build
-add_executable(dynamixel_control src/dynamixel_control.cpp)
-add_executable(dynamixel_topic src/dynamixel_topic.cpp)
-add_executable(dynamixel_CR src/dynamixel_CR.cpp)
+
 add_executable(dynamixel_IMU src/dynamixel_IMU.cpp)
-add_executable(dynamixel_joint src/dynamixel_joint.cpp)
 
-# Set include directories for each target
-target_include_directories(dynamixel_control PUBLIC
+# Set include directories for the target
+target_include_directories(dynamixel_IMU PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>
 )
 
-target_include_directories(dynamixel_joint PUBLIC
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-  $<INSTALL_INTERFACE:include>
-)
-
-target_include_directories(dynamixel_topic PUBLIC
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-  $<INSTALL_INTERFACE:include>
-)
-
-target_include_directories(dynamixel_CR PUBLIC
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-  $<INSTALL_INTERFACE:include>
-  
-)
 
 # Link libraries and dependencies
-ament_target_dependencies(dynamixel_control
-  rclcpp
-  dynamixel_sdk
-  dynamixel_sdk_custom_interfaces
-  std_msgs
-  dynamixel_workbench_toolbox
-)
-
-ament_target_dependencies(dynamixel_joint
-  rclcpp
-  dynamixel_sdk
-  dynamixel_sdk_custom_interfaces
-  std_msgs
-  dynamixel_workbench_toolbox
-)
-
-ament_target_dependencies(dynamixel_topic
-  rclcpp
-  dynamixel_sdk
-  dynamixel_sdk_custom_interfaces
-  std_msgs
-  dynamixel_workbench_toolbox
-)
-
-
- target_link_libraries(dynamixel_CR
-   ${rclcpp_LIBRARIES}
-   ${dynamixel_sdk_LIBRARIES}
-   ${std_msgs_LIBRARIES}
-   ${dynamixel_workbench_toolbox_LIBRARIES}
-   
- )
 
 ament_target_dependencies(dynamixel_IMU
   rclcpp
@@ -126,11 +76,7 @@ ament_target_dependencies(dynamixel_IMU
 
 # Install executables
 install(TARGETS
-  dynamixel_control
-  dynamixel_topic
-  dynamixel_CR
   dynamixel_IMU
-  dynamixel_joint
   DESTINATION lib/${PROJECT_NAME}
 )
 
