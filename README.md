@@ -51,11 +51,11 @@ source install/setup.bash
 
 cd ~/ros2_ws/src
 
-git clone https://github.com/whatny/ROS2_iAHRS_Dynamixel
+git clone https://github.com/whatny/ros2_iahrs_dynamixel
 
 cd ~/ros2_ws
 
-colcon build --packages-select ROS2_iAHRS_Dynamixel
+colcon build --packages-select ros2_iahrs_dynamixel
 
 source install/setup.bash
 
@@ -74,7 +74,7 @@ ros2 topic echo /imu/data
 
 #### Step 3: Run the Motor Control Node
 
-ros2 run ROS2_iAHRS_Dynamixel dynamixel_imu
+ros2 run ros2_iahrs_dynamixel dynamixel_imu
 
 
 Important Notes
