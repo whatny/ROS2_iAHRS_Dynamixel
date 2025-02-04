@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(ROS2_iAHRS_Dynamixel)
+project(ros2_iahrs_dynamixel)
 
 # Default to C99
 if(NOT CMAKE_C_STANDARD)
