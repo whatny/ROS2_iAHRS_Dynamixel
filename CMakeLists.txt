@@ -47,10 +47,10 @@ include_directories(
 
 # Build
 
-add_executable(dynamixel_IMU src/dynamixel_IMU.cpp)
+add_executable(dynamixel_imu src/dynamixel_imu.cpp)
 
 # Set include directories for the target
-target_include_directories(dynamixel_IMU PUBLIC
+target_include_directories(dynamixel_imu PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>
 )
@@ -58,7 +58,7 @@ target_include_directories(dynamixel_IMU PUBLIC
 
 # Link libraries and dependencies
 
-ament_target_dependencies(dynamixel_IMU
+ament_target_dependencies(dynamixel_imu
   rclcpp
   dynamixel_sdk
   dynamixel_sdk_custom_interfaces
@@ -76,7 +76,7 @@ ament_target_dependencies(dynamixel_IMU
 
 # Install executables
 install(TARGETS
-  dynamixel_IMU
+  dynamixel_imu
   DESTINATION lib/${PROJECT_NAME}
 )
 
