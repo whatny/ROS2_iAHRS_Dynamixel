@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="3">
-  <name>ROS2_iAHRS_Dynamixel </name>
+  <name>ros2_iahrs_dynamixel</name>
   <version>0.0.1</version>
   <description>ROS2 imu_motor_control using ROBOTIS DYNAMIXEL SDK</description>
   <license>Apache 2.0</license>
